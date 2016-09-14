@@ -1,0 +1,70 @@
+
+
+
+<style type="text/css">
+a:link {color:#ffffff;}
+a:visited {color:#ffffff;}
+a:active {color:#ffffff;}
+a:hover {color:#ffffff;}
+</style>
+	
+		<center><h3 >Profesional</h3></center>
+		
+		<div class="strip text-center"><%= image_tag("icons/tuerca.png")%> </div>
+
+
+			<div class="contenedor-info">
+				<div class='contenedor-info-foto'>
+					<%= image_tag(@fotografo.image.url, size: "490x290" )%>
+					</br>
+
+				</div>
+
+				<div class="contenedor-facebook">
+					 
+					 <%= link_to "http://www.facebook.com/#{@fotografo.dato_facebook}" do %>
+					 <%= image_tag("redes_sociales/facebook.png") %>
+					 <%end%>
+				</div>
+				<div class="contenedor-instagram">
+					 <%= link_to "http://www.instagram.com/#{@fotografo.dato_instagram}" do %>
+					 <%= image_tag("redes_sociales/instagram.png") %>
+					 <%end%>
+				</div>
+				<div class="contenedor-twitter">
+					 <%= link_to "http://www.twitter.com/#{@fotografo.dato_twitter}" do %>
+					 <%= image_tag("redes_sociales/twitter.png") %>
+					 <%end%>
+				</div>
+				<div class='contenedor-info-texto' >
+					<font color='white'>
+					Hola mi nombres es, <%= @fotografo.nombre_pila %> <%=@fotografo.apellido%>
+					</br>
+
+					<%= @fotografo.comentarios %>
+					
+					</br>
+				</br>
+					<%= link_to 'Volver a todos los fotografos', fotografos_path %>
+					
+				
+				</div>
+				<div class ='contenedor-info-pedido' >
+					<font color='white' >
+					<center><%= link_to 'Peticion Compromiso',:controller => "compromissos" ,action: "index" ,:searchbox=> @fotografo.nombre_pila %> </center>
+				</div>
+			</div>
+		</div>	
+
+	
+
+
+
+
+
+
+
+
+
+
+

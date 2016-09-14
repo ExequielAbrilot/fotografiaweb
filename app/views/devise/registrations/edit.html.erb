@@ -1,0 +1,70 @@
+<center><h2><%= resource_name.to_s.humanize %></h2></center>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, :html=>{:id=>"msform"}) do |f| %>
+  <%= devise_error_messages! %>
+
+  <fieldset>
+  <h2 class="fs-title">Actualiza tus datos</h2>
+  <h3 class="fs-subtitle">Son muy importante para nosotros</h3>
+  <div class="field">
+    <%= f.label :primer_nombre ,"Primer Nombre" %><br />
+    <%= f.text_field :primer_nombre, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :segundo_nombre,"Segundo Nombre" %><br />
+    <%= f.text_field :segundo_nombre, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido ,"Apellido" %><br />
+    <%= f.text_field :apellido, autofocus: true %>
+  </div>
+
+  <div class="field">
+  <%= f.radio_button :is_female, 'Mujer' %> 
+  <%= f.label :is_female, 'Mujer', :value => 'Mujer' %>
+  <%= f.radio_button :is_female, 'Hombre' %>
+  <%= f.label :is_female, 'Hombre', :value => 'Hombre' %>
+   </div>
+  
+  <div><%= f.label :datos_nacimiento,"Fecha de nacimiento" %><br />
+        <%= f.date_select(:datos_nacimiento,:start_year => 2016,:end_year => 1910)  %></div>
+
+  <div class="field">
+    <%= f.label :email ,"Correo" %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password , "Contraseña nueva" %> <i>(dejar en blanco si no desea cambiar)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation , "Confirmar la contraseña nueva"%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password ,"Contraseña actual"%> <i>(Necesitamos su contraseña actual para confirmar los cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Actualizar" %>
+  </div>
+
+</fieldset>
+<% end %>
+
+<h3>Cancelar la cuenta</h3>
+
+<p>Unhappy? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
+
+<%= link_to "Devolverse", :back %>

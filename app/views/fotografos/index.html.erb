@@ -1,0 +1,12 @@
+<% @fotografo.each do |f| %>
+  <tr>
+    <td><%= f.nombre_pila %></td>
+    <td><%= f.fecha_nacimiento %></td>
+    <td><%= link_to 'Show', fotografo_path(f) %></td>
+    <td><%= link_to 'Edit', edit_fotografo_path(f) %></td>
+    <td><%= link_to 'Destroy', fotografo_path(f),
+                    method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+    </br>
+  </tr>
+<% end %>
+</table>

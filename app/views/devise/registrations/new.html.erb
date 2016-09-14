@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html=>{:id=>"msform"}) do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+  <h2 class="fs-title">Registrate</h2>
+  <h3 class="fs-subtitle">Para acceder a privilegios</h3>
+  <div class="field">
+    <%= f.label :primer_nombre ,"Primer Nombre" %><br />
+    <%= f.text_field :primer_nombre, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :segundo_nombre,"Segundo Nombre" %><br />
+    <%= f.text_field :segundo_nombre, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido ,"Apellido" %><br />
+    <%= f.text_field :apellido, autofocus: true %>
+  </div>
+   <div class="field">
+  <%= f.radio_button :is_female, 'Mujer' %> 
+  <%= f.label :is_female, 'Mujer', :value => 'Mujer' %>
+  <%= f.radio_button :is_female, 'Hombre' %>
+  <%= f.label :is_female, 'Hombre', :value => 'Hombre' %>
+  <br />
+  </div>
+  <div><%= f.label :datos_nacimiento,"Fecha de nacimiento" %><br />
+        <%= f.date_select(:datos_nacimiento,:start_year => 2016,:end_year => 1910)  %></div>
+
+  <div class="field">
+    <%= f.label :email ,"Correo" %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :password , "Contraseña"%>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracteres como mínimo)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmacion de la contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrarse" %>
+  </div>
+   </fieldset>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+

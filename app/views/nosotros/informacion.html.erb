@@ -1,0 +1,57 @@
+
+
+
+  <section class="about-us" id="about-us" >
+  
+  <div class="content" >
+  
+    <h1>Lapsus Photos</h1>
+    <center><hr/></center>
+    <p class="title">Lapsus es una empresa dedicada a la captura de los momentos</p>
+      <section class="portfolio" id="portfolio">
+
+
+      <div class="portfolio-margin">
+      
+        <h2>FOTOGRAFOS PROFESIONALES</h2>
+
+            <p class="title">Como fotografos profesionales estamos dedicados a la captura de los detalles que blablabla</p>
+            <% @fotografo.each do |f| %>
+            <center><div class="column-one" >
+        
+              
+
+                <!--muestra imagen 
+                <div>
+
+                  <%= image_tag(f.image.url, size: "80x160" )%>
+                </div>
+                -->
+                
+                
+                <h2><%= f.nombre_pila %>  <%= f.apellido %></h2> 
+                
+                <p>Telefono : <%= f.telefono %></p><tab></tab>
+                <p>Mail : <%= f.email %></p>
+                
+                <%= link_to fotografo_path(f) do %>
+                <div class="circle-one" ></div>
+                <%end%>
+
+                 
+            </div>
+            </center>
+            <%end%>
+            <center><%= paginate @fotografo %>
+            <%= page_entries_info @fotografo %>
+            </center>
+            </br>
+      </div>   
+         
+      </section>
+      <p></p>
+  </div>
+ 
+  </section>
+
+  

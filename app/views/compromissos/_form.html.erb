@@ -1,0 +1,36 @@
+<%= form_for(@compromisso) do |f| %>
+  <% if @compromisso.errors.any? %>
+    <div id="error_explanation">
+      <h2 id="pe"><%= pluralize(@compromisso.errors.count, "error") %> prohibited this compromisso from being saved:</h2>
+
+      <ul>
+      <% @compromisso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :Nombre_Evento  %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  </br>
+  <div class="field">
+  <%= f.label :Fotografo  %><br>
+  <%= f.collection_select(:fotografo_id, Fotografo.all,:id, :nombre_pila,  {:prompt => :nombre_pila})%>
+  </div>
+  <div class="field">
+  <%= f.label :Servicio  %><br>
+                      <!-- nombre del campo, de donde saca la info , que quiere sacar de la info-->
+  <%= f.collection_select(:servicio_id, Servicio.all,:id, :nombre,  {:prompt => "Seleccione Servicio"})%>
+  </div>
+  </br>
+  <div class="field">
+    <%= f.label :dato %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,65 @@
+<h1>Editando fotografo</h1>
+ 
+<%= form_for :fotografo, html: { multipart: true } ,url: fotografo_path(@fotografo), method: :patch do |f| %>
+  <% if @fotografo.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@fotografo.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @fotografo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+ <p id="pe">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </p>
+  <p id="pe">
+    <%= f.label :nombre_pila %><br>
+    <%= f.text_field :nombre_pila %>
+  </p>
+  <p id="pe">
+    <%= f.label :apellido %><br>
+    <%= f.text_field :apellido %>
+  </p>
+  <p id="pe">
+    <%= f.label :telefono %><br>
+    <%= f.text_field :telefono %>
+  </p>
+  <p id="pe">
+    <%= f.label :fecha_nacimiento %><br>
+    <%= f.text_field :fecha_nacimiento %>
+  </p>
+  <p id="pe">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
+  </p>
+  <p id="pe">
+    <%= f.label :email %><br>
+    <%= f.text_field  :email %>
+  </p>
+ 
+  <p id="pe">
+    <%= f.label :comentarios %><br>
+    <%= f.text_area  :comentarios %>
+  </p>
+
+
+
+
+      
+      
+  
+      
+     
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<!--fotografo_path nos redirige al show del @fotografo-->
+<!--fotografos_path nos redirige a los fotografos tabla-->
+<%= link_to 'atras', fotografo_path %>

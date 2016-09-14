@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p id="pe">
+  <strong>Titulo:</strong>
+  <%= @compromisso.titulo %>
+</p>
+
+<p id="pe">
+  <strong>Texto:</strong>
+  <%= @compromisso.servicio.nombre %>
+</p>
+
+<p id="pe">
+  <strong>Date:</strong>
+  <%= @compromisso.date %>
+</p>
+
+
+ |
+<%= link_to 'Back',:controller => "compromissos" ,action: "index" ,:searchbox=> @compromisso.fotografo.nombre_pila %>

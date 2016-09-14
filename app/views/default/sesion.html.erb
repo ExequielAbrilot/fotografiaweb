@@ -1,0 +1,81 @@
+<style type="text/css">
+a:link {color:#ffffff;}
+a:visited {color:#ffffff;}
+a:active {color:#ffffff;}
+a:hover {color:#ffffff;}
+</style>
+
+<section class="start-page parallax-background" id="home" style="background:white;">
+
+
+
+<div id="estatico">
+</br>
+	<center><h3 style="color:white;">BIENVENIDO </h3></center>
+</br>
+	<div class="circular"></div>
+</br>
+	
+	<center><p style="color:white;">Perfil :<%= current_user.primer_nombre %></p></center>
+
+</br>
+	<button class="accordion">Inicio</button>
+	<div class="panel" onclick="llenarDIV1()">
+  		<p >Mis datos</p>
+	</div>
+
+	<button class="accordion">Servicios</button>
+	<div class="panel" onclick="llenarDIV2()">
+	  <p >Peticion de servicios</p>
+	</div>
+
+	<button class="accordion">Sesion</button>
+	<div class="panel" onclick="llenarDIV3()">
+	  <h4><%= link_to "Editar Cuenta", "/users/edit" %></h4>
+	  <h4 ><%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete, :url=>'/sesion'  %></h4>
+	</div>
+
+
+
+
+</div>
+
+
+<div id="contenido_misdatos">
+
+</div>
+
+<script>
+/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+
+<!--
+   function llenarDIV1(){
+      var obj = document.getElementById('contenido_misdatos');
+      obj.innerHTML = '<p> Nombre: <%= current_user.primer_nombre%></p> <p> Apellido: <%= current_user.apellido%></p> <p> Email: <%= current_user.email%></p>';
+   }
+   function llenarDIV2(){
+      var obj = document.getElementById('contenido_misdatos');
+      obj.innerHTML = "<% if @compromissos.where(['user_id = ?',current_user.id]).length >0 %><% @compromissos.each do |x| %><p> Fecha del servicio<%= x.date %></p><p>Fotografo escodigo:<%=x.fotografo.nombre_pila%></p><%end%><%else %><p><%='No tiene ningun servicio registrado primero vea los fotografos a gusto y luego pida un servicio';%></p><%end%>";
+   }
+   function llenarDIV3(){
+      var obj = document.getElementById('contenido_misdatos');
+      obj.innerHTML = '<h3>3</h3>';
+   }
+
+   
+//-->
+</script>
+
+</script>
+</section>
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Paginafotografica</title>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	
+	
+
+	<nav>
+	<section class="menu">
+
+	    <div class="menu-content">
+	    
+	    <div class="logo" style="font-family: 'Great Vibes', cursive; font-size:240%">Lapsus Foto</div>
+	    
+	      <ul id="menu">
+	        <li><a href="/welcome/index">INICIO</a></li>
+	        <li><a href="/nosotros/informacion">NOSOTROS</a></li>
+	        <li><a href="/nosotros/servicios ">SERVICIOS</a></li>
+	        <li><a href="/users/login">MI CUENTA</a></li>
+	        <li><% if current_user %>
+    	<%= link_to 'CERRAR SESION', destroy_user_session_path, method: :delete %>
+	<% else %>
+    	<%= link_to 'INICIAR SESION', new_user_session_path %>
+	<% end %></li>
+	      </ul>
+	    </div>
+	  
+	  
+	  </section>
+	</nav>
+
+
+
+
+
+
+    
+<%= yield %>
+
+</body>
+<center><p id="pe" class="notice"><%= notice %></p></center>
+<center><p id="pe" class="alert"><%= alert %></p></center>
+<footer>
+<section class="partners parallax-background-partners" id="partners">
+    
+    <div class="opacity"></div>
+    
+      <div class="content">
+      
+        <h2>VIVE SIN REMORDIMIENTO</h2>
+        
+            <div class="logo">
+          
+                  
+		        <div class="logo"><%= image_tag("logo-footer.png")%></div>
+		        <div class="menu-footer">
+		        
+		          <a id="a1" href="#home">Home</a>
+		          <a id="a2" href="#">Privacy policy</a>
+		          <a id="a3" href="#">RSS</a>
+		          <a id="a4" href="#">Facebook</a>
+		          <a id="a5" href="#">Dribble</a>
+		          <a id="a6" href="#">Twitter</a>
+		          <a id="a7" href="#">Contact</a>
+		        
+		        </div>
+		        
+		        <div class="copyright">© 2016. All Rights Reserved zEEk</div>    
+		    </div>
+      
+      </div>
+
+    </section>
+
+</footer>
+</html>
+
+
+

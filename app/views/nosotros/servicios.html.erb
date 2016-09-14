@@ -1,0 +1,62 @@
+
+
+
+  <section class="about-us" id="about-us" >
+  
+  <div class="content" >
+  
+    <h1>Lapsus Photos</h1>
+    <center><hr/></center>
+    <p class="title">Lapsus es una empresa dedicada a la captura de los momentos</p>
+      <section class="portfolio" id="portfolio">
+
+
+      <div class="portfolio-margin">
+      
+        <h2>SERVICIOS DE CALIDAD</h2>
+
+            <p class="title">Nuestros servicios entregados son blablabla</p>
+            <% @servicios.each do |f| %>
+            <center><div  >
+        
+              
+
+                 
+                <div class="centrar-imagen">
+
+                  <%= image_tag("servicios/#{f.nombre}.jpg" ,:id=>"imagen" )%>
+                </div>
+                
+                
+                <div>
+                  <h2><%= f.nombre%> </h2> 
+                  
+                  <p>precio por hora : <%= f.precio %></p><tab></tab>
+                  <p>Como fotografos <%= f.comentario%></p>
+
+                  <p style="font-size:12px">para elegir algun servicio primero debe mirar los fotografos y pedir sus prestaciones </p>
+                  <div class="column-one" >
+                  <%= link_to 'informacion' do %>
+                  
+                    <div class="circle-one" ></div>
+                  <%end%>
+                </div>
+                </div>
+
+                 
+            </div></center>
+            
+            <%end%>
+            <center><%= paginate @servicios %>
+            <%= page_entries_info @servicios %>
+            </center>
+            </br>
+      </div>   
+         
+      </section>
+      <p></p>
+  </div>
+ 
+  </section>
+
+  

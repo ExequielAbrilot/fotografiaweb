@@ -1,0 +1,142 @@
+// Place all the styles related to the fotografos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*--my skill--*/
+.contenedor-facebook{
+  position:relative;
+
+}
+.contenedor-info-pedido{
+float:left;
+position:relative;
+left:160px;
+width: 127px;
+height: 19px;
+
+border: 6px rgb(1, 1, 1) solid;
+
+padding: 27px;
+
+margin: 0px;
+
+background: rgb(143, 33, 33);
+
+-moz-box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+-webkit-box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+}
+.contenedor-info-texto{
+position:relative;
+left:80px;
+top:-130px;
+float:left;
+width: 292px;
+height: 323px;
+
+border: 9px rgb(1, 1, 1) solid;
+
+padding: 30px;
+
+margin: 0px;
+
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=91)";
+filter: alpha(opacity=91);
+-moz-opacity: 0.91;
+-khtml-opacity: 0.91;
+opacity: 0.91;
+
+background: rgb(45, 45, 45);
+
+-moz-box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+-webkit-box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+box-shadow:  0px 0px 0px 0px rgb(196, 168, 168);
+}
+
+.contenedor-info-foto{
+float:left;
+  width: 490px;
+height: 290px;
+
+padding: 30px;
+
+background: rgb(180, 176, 176);
+}
+.contenedor-info{
+width: 100%;
+height: 380px;
+
+padding: 30px;
+
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=83)";
+filter: alpha(opacity=83);
+-moz-opacity: 0.83;
+-khtml-opacity: 0.83;
+opacity: 0.83;
+
+background: rgb(233, 228, 228);
+}
+.strip{
+  margin: 28px 0 0px 0;
+}
+ .text-center {
+  text-align: center;
+}
+
+.alaizq{
+	float:left;
+}
+.clearfix:before,
+.clearfix:after{
+display: table;
+  content: " ";
+}
+
+.col-md-1{
+position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-md-2{
+
+position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.my-skills{
+	background: #1abc9c;
+	padding: 60px 0;
+}
+.my-skills h3{
+margin:0;
+color:#ffffff;
+font-size:36px;
+font-weight:500;
+letter-spacing: 18px;
+}
+.skill-grids{
+margin-top:50px;
+}
+.skills-grid p{
+margin:20px 0 0 0;
+color:#ffffff;
+font-size:16px;
+font-weight:600;
+text-transform:uppercase;
+}
+.circle{
+color:#ffffff;
+font-size:36px;
+}
+span.circles-number {
+  font-size: 36px;
+}
+span.circles-text {
+  font-size: 36px;
+}
+.circles-text-wrp {
+  line-height: 142px !important;
+}
+/*--//my skill--*/
